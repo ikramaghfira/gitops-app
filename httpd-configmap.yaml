@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: httpd-config
+  namespace: gitops-app
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>HTTPD Page</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+            .container {
+                background: white;
+                padding: 40px;
+                border-radius: 10px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+                text-align: center;
+            }
+            h1 { color: #f5576c; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>🌐 Apache HTTPD Server</h1>
+            <p>Ini tampilan dari HTTPD dan nama saya <strong>FIRA</strong></p>
+            <p><em>Deployed with GitOps & ArgoCD</em></p>
+        </div>
+    </body>
+    </html>
